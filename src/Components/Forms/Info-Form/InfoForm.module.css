@@ -1,0 +1,14 @@
+.Form {
+  position: absolute;
+  top: 10vh;
+  left: 1rem;
+  right: 1rem;
+  background-color: white;
+  padding: 2rem;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+label {
+  margin-top: 1rem;
+}
