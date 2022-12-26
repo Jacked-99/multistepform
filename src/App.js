@@ -1,6 +1,7 @@
 import "./App.css";
 import { useState } from "react";
 import NavBackground from "./Components/TopNav/TopNavBackground";
+import Buttons from "./Components/Buttons/Buttons";
 
 function App() {
   const [state, setState] = useState(1);
@@ -8,6 +9,7 @@ function App() {
   return (
     <>
       <NavBackground state={state}></NavBackground>
+      <Buttons />
     </>
   );
 }
