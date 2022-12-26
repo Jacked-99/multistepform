@@ -1,0 +1,30 @@
+:root {
+  --white: hsl(0, 0%, 100%);
+  --MarineBlue: hsl(213, 96%, 18%);
+  --PastelBlue: hsl(228, 100%, 84%);
+  --LightBlue: hsl(206, 94%, 87%);
+}
+
+.number {
+  padding: 0.5rem 0.8rem;
+  border-radius: 50%;
+  border: 1px solid var(--white);
+  font-weight: 500;
+  font-size: 1rem;
+  margin: 2rem 0.5rem;
+  color: var(--white);
+}
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  background-image: url(../../../assets/images/bg-sidebar-mobile.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 25vh;
+}
+.active {
+  color: var(--MarineBlue);
+  background-color: var(--LightBlue);
+  border-color: var(--LightBlue);
+}
