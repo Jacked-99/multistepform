@@ -1,0 +1,11 @@
+.number {
+  padding: 1rem;
+  border-radius: 50%;
+  border-color: hsl(0, 0%, 100%);
+  font-size: 2rem;
+}
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
