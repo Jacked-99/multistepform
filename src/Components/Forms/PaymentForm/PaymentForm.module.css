@@ -19,3 +19,48 @@
 .button {
   display: none;
 }
+.plans {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.selcet {
+  border-color: hsl(243, 100%, 62%);
+}
+.sliderSection {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 2rem auto;
+}
+.slider {
+  height: 0;
+  width: 0;
+  visibility: hidden;
+}
+.sliderCircle {
+  position: relative;
+  width: 3rem;
+  height: 1.5rem;
+  background-color: red;
+  margin: 0 1rem;
+  border-radius: 2rem;
+  transition: 0.3s;
+}
+.sliderCircle::after {
+  content: "";
+  position: absolute;
+  top: 20%;
+  left: 8%;
+  height: 60%;
+  width: 30%;
+  border-radius: 50%;
+  background-color: white;
+}
+.sliderCircle:checked + .sliderCircle {
+  background: #bada55;
+}
+.sliderCircle:checked + .sliderCircle::after {
+  left: calc(100% - 5px);
+  transform: translateX(-100%);
+}
