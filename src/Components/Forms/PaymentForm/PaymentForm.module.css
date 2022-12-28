@@ -1,4 +1,4 @@
-.Form {
+.form {
   position: absolute;
   top: 10vh;
   left: 1rem;
@@ -14,18 +14,6 @@
   margin-bottom: 0;
 }
 .p {
-  color: hsl(231, 11%, 63%);
-}
-.label {
-  margin-top: 1rem;
-  font-size: small;
-  color: hsl(213, 96%, 18%);
-}
-.input {
-  padding: 0.6rem;
-  border-radius: 0.2rem;
-  border: 1px solid hsl(229, 24%, 87%);
-  font-weight: 500;
   color: hsl(231, 11%, 63%);
 }
 .button {

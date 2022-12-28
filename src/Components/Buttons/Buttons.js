@@ -4,7 +4,9 @@ const Buttons = (props) => {
   return (
     <div className={styles.container}>
       <button className={styles.buttonPrev}>Go Back</button>
-      <button className={styles.buttonNext}>Next Step</button>
+      <button className={styles.buttonNext} onClick={props.onClick}>
+        Next Step
+      </button>
     </div>
   );
 };
