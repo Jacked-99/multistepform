@@ -32,21 +32,36 @@
   flex-direction: row;
   justify-content: center;
   margin: 2rem auto;
+  background-color: hsl(217, 100%, 97%);
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+}
+.sliderSection label {
+  color: hsl(231, 11%, 63%);
+  font-weight: 500;
+}
+.sliderSection .monthly {
+  color: hsl(213, 96%, 18%);
 }
 .slider {
-  height: 0;
+  opacity: 0;
   width: 0;
-  visibility: hidden;
+  height: 0;
 }
 .sliderCircle {
+  display: inline-block;
+  cursor: pointer;
   position: relative;
   width: 3rem;
   height: 1.5rem;
-  background-color: red;
+  background-color: hsl(213, 96%, 18%);
   margin: 0 1rem;
+
   border-radius: 2rem;
   transition: 0.3s;
 }
+
 .sliderCircle::after {
   content: "";
   position: absolute;
@@ -57,10 +72,8 @@
   border-radius: 50%;
   background-color: white;
 }
-.sliderCircle:checked + .sliderCircle {
-  background: #bada55;
-}
-.sliderCircle:checked + .sliderCircle::after {
+
+.slider:checked + .sliderCircle::after {
   left: calc(100% - 5px);
   transform: translateX(-100%);
 }

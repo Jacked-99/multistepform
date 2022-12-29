@@ -2,7 +2,8 @@ import styles from "./PaymentFormCard.module.css";
 import { useState } from "react";
 
 const PaymentFormCard = (props) => {
-  const [select, setSelect] = useState(false);
+  const select = props.state;
+  console.log(`${select} ${props.name}`);
   const priceCheck = () => {
     let price = props.price;
     if (!props.plan) {
@@ -12,7 +13,6 @@ const PaymentFormCard = (props) => {
     }
   };
   const handleClick = () => {
-    setSelect((prevState) => !prevState);
     if (select === false) {
       const obj = { plan: props.name, price: priceCheck() };
       props.onClick(obj);
@@ -20,11 +20,13 @@ const PaymentFormCard = (props) => {
   };
   return (
     <section
-      className={`${styles.plan} ${select ? styles["plan-select"] : ""}`}
+      className={`${styles.plan} ${
+        select === true ? styles["plan-select"] : ""
+      }`}
       onClick={handleClick}
     >
       <div>
-        <img src={props.src}></img>
+        <img src={props.src} alt={`${props.name} plan picture`}></img>
       </div>
       <div className={styles["plan-content"]}>
         <h3>{props.name}</h3>
