@@ -23,7 +23,7 @@ const AddonForm = forwardRef((props, ref) => {
     e.preventDefault();
     console.log("yes");
     ctx.setPage({ type: "inc" });
-    ctx.setData({ ...addons });
+    ctx.setData({ addons: addons });
   };
   let sum = () => {
     let sum = 0;

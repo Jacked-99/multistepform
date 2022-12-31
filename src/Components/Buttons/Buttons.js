@@ -8,16 +8,22 @@ const Buttons = (props) => {
     ctx.setPage({ type: "dec" });
   };
   return (
-    <div className={styles.container}>
+    <div className={`${styles.container} ${ctx.page === 5 && styles.hide}`}>
       <button
         className={`${styles.buttonPrev} ${ctx.page === 1 ? styles.hide : ""}`}
         onClick={handleClick}
       >
         Go Back
       </button>
-      <button className={styles.buttonNext} onClick={props.onClick}>
-        Next Step
-      </button>
+      {ctx.page === 4 ? (
+        <button className={styles.btnConfirm} onClick={props.onClick}>
+          Confirm
+        </button>
+      ) : (
+        <button className={styles.buttonNext} onClick={props.onClick}>
+          Next Step
+        </button>
+      )}
     </div>
   );
 };

@@ -1,0 +1,26 @@
+.Form {
+  position: absolute;
+  top: 10vh;
+  left: 1rem;
+  right: 1rem;
+  background-color: white;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+.h2 {
+  color: hsl(213, 96%, 18%);
+  margin-bottom: 0;
+}
+.p {
+  color: hsl(231, 11%, 63%);
+  margin-bottom: 3rem;
+}
+.img {
+  align-self: center;
+  margin-top: 3rem;
+  width: 4rem;
+  height: 4rem;
+}

@@ -29,7 +29,9 @@ const NavBackground = (props) => {
       </span>
       <span
         id="4"
-        className={`${classes.number} ${4 === state ? classes.active : ""}`}
+        className={`${classes.number} ${
+          state === 4 || state === 5 ? classes.active : ""
+        }`}
       >
         4
       </span>

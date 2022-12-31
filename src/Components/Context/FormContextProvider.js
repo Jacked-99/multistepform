@@ -6,7 +6,7 @@ const FormContextProvider = (props) => {
   const [currentData, setCurrentData] = useState({});
 
   const setPageHandler = (action) => {
-    if (action.type === "inc" && currentPage < 4) {
+    if (action.type === "inc" && currentPage < 5) {
       setCurrentPage((prev) => prev + 1);
     } else if (action.type === "dec") {
       setCurrentPage((prev) => prev - 1);
