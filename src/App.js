@@ -4,6 +4,7 @@ import NavBackground from "./Components/TopNav/TopNavBackground";
 import Buttons from "./Components/Buttons/Buttons";
 import InfoForm from "./Components/Forms/Info-Form/InfoForm";
 import PaymentForm from "./Components/Forms/PaymentForm/PaymentForm";
+import AddonForm from "./Components/Forms/AddonForm/AddonForm";
 
 function App() {
   const [state, setState] = useState(1);
@@ -15,7 +16,7 @@ function App() {
   return (
     <>
       <NavBackground state={state}></NavBackground>
-      <PaymentForm />
+      <AddonForm ref={ref} />
       <Buttons onClick={HandleClick} />
     </>
   );

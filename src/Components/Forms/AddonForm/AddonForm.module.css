@@ -1,0 +1,26 @@
+.form {
+  position: absolute;
+  top: 10vh;
+  left: 1rem;
+  right: 1rem;
+  background-color: white;
+  padding: 2rem;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+.h2 {
+  color: hsl(213, 96%, 18%);
+  margin-bottom: 0;
+}
+.p {
+  color: hsl(231, 11%, 63%);
+}
+.button {
+  display: none;
+}
+.add-ons {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}

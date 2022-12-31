@@ -1,4 +1,4 @@
-import { forwardRef, useState } from "react";
+import { forwardRef, useEffect, useState } from "react";
 import styles from "./PaymentForm.module.css";
 import arcade from "../../../assets/images/icon-arcade.svg";
 import advanced from "../../../assets/images/icon-advanced.svg";
@@ -7,14 +7,22 @@ import PaymentFormCard from "./PaymentFormCard";
 
 const PaymentForm = forwardRef((props, ref) => {
   const [plan, setPlan] = useState(false);
+  const [currentPlan, setCurrentPlan] = useState({ plan: "", price: 0 });
   const [currentCheck, setCurrentCheck] = useState({
     arcade: false,
     advanced: false,
     pro: false,
   });
-
+  useEffect(() => {
+    if (plan === true) {
+      currentPlan.price = currentPlan.price * 10;
+      console.log(currentPlan);
+    } else if (plan === false) {
+      currentPlan.price = currentPlan.price / 10;
+      console.log(currentPlan);
+    }
+  }, [plan]);
   const handleChange = (e) => {
-    console.log(e.target.checked);
     setPlan(e.target.checked);
   };
   const handleClick = (e) => {
@@ -25,10 +33,15 @@ const PaymentForm = forwardRef((props, ref) => {
     } else if (e.plan === "Pro") {
       setCurrentCheck({ arcade: false, advanced: false, pro: true });
     }
-    console.log(e);
+    setCurrentPlan(e);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log("YES");
   };
   return (
-    <form className={styles.form}>
+    <form className={styles.form} onSubmit={handleSubmit}>
       <h2 className={styles.h2}>Select your plan</h2>
       <p className={styles.p}>
         You have the option of monthly or yearly billing
@@ -74,7 +87,12 @@ const PaymentForm = forwardRef((props, ref) => {
         </label>
         <label htmlFor="slider">Yearly</label>
       </section>
-      <button className={styles.button} type="submit" ref={ref}></button>
+      <button
+        className={styles.button}
+        type="submit"
+        ref={ref}
+        disabled={currentPlan.price === 0}
+      ></button>
     </form>
   );
 });

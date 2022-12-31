@@ -1,0 +1,66 @@
+.plan {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  border: 1px solid hsl(229, 24%, 87%);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  margin: 0.4rem 0;
+}
+.checkbox {
+  margin-right: 1rem;
+}
+.input {
+  width: 0;
+  height: 0;
+  opacity: 0;
+  display: none;
+}
+.custom {
+  position: relative;
+  cursor: pointer;
+  width: 1.3rem;
+  height: 1.3rem;
+  display: inline-block;
+  border: 1px solid hsl(229, 24%, 87%);
+  border-radius: 0.3rem;
+}
+.custom::after {
+  content: "";
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+.label {
+  font-size: 0.95rem;
+  display: flex;
+  flex-direction: column;
+  color: hsl(213, 96%, 18%);
+  font-weight: 500;
+}
+.desc {
+  font-size: 0.7rem;
+  font-weight: 400;
+  color: hsl(231, 11%, 63%);
+}
+.input:checked + .custom::after {
+  color: white;
+  content: url("../../../assets/images/icon-checkmark.svg");
+}
+.input:checked + .custom {
+  background-color: hsl(243, 100%, 62%);
+  border-color: hsl(243, 100%, 62%);
+}
+.checked {
+  border-color: hsl(243, 100%, 62%);
+  background-color: hsl(217, 100%, 97%);
+}
+.price {
+  font-size: 0.8rem;
+  margin-left: auto;
+  color: hsl(243, 100%, 62%);
+}

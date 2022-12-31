@@ -3,7 +3,7 @@ import { useState } from "react";
 
 const PaymentFormCard = (props) => {
   const select = props.state;
-  console.log(`${select} ${props.name}`);
+
   const priceCheck = () => {
     let price = props.price;
     if (!props.plan) {
