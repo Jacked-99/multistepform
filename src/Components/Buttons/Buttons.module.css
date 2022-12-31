@@ -23,6 +23,8 @@
 .buttonNext {
   background-color: var(--MarineBlue);
   color: white;
+  margin-left: auto;
+  margin-right: 0;
 }
 .buttonNext:hover {
   opacity: 0.9;
@@ -33,4 +35,7 @@
 }
 .buttonPrev:hover {
   color: var(--MarineBlue);
+}
+.hide {
+  opacity: 0;
 }

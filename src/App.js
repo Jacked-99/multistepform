@@ -5,6 +5,8 @@ import Buttons from "./Components/Buttons/Buttons";
 import InfoForm from "./Components/Forms/Info-Form/InfoForm";
 import PaymentForm from "./Components/Forms/PaymentForm/PaymentForm";
 import AddonForm from "./Components/Forms/AddonForm/AddonForm";
+import FormContextProvider from "./Components/Context/FormContextProvider";
+import FormDisplayer from "./Components/Forms/FormsDisplayer/FormsDisplayer";
 
 function App() {
   const [state, setState] = useState(1);
@@ -14,11 +16,11 @@ function App() {
   };
 
   return (
-    <>
+    <FormContextProvider>
       <NavBackground state={state}></NavBackground>
-      <AddonForm ref={ref} />
+      <FormDisplayer ref={ref} />
       <Buttons onClick={HandleClick} />
-    </>
+    </FormContextProvider>
   );
 }
 

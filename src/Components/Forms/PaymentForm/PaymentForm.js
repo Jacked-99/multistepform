@@ -1,11 +1,13 @@
-import { forwardRef, useEffect, useState } from "react";
+import { forwardRef, useEffect, useState, useContext } from "react";
 import styles from "./PaymentForm.module.css";
 import arcade from "../../../assets/images/icon-arcade.svg";
 import advanced from "../../../assets/images/icon-advanced.svg";
 import pro from "../../../assets/images/icon-pro.svg";
 import PaymentFormCard from "./PaymentFormCard";
+import FormContext from "../../Context/FormContext";
 
 const PaymentForm = forwardRef((props, ref) => {
+  let ctx = useContext(FormContext);
   const [plan, setPlan] = useState(false);
   const [currentPlan, setCurrentPlan] = useState({ plan: "", price: 0 });
   const [currentCheck, setCurrentCheck] = useState({
@@ -16,9 +18,11 @@ const PaymentForm = forwardRef((props, ref) => {
   useEffect(() => {
     if (plan === true) {
       currentPlan.price = currentPlan.price * 10;
+      ctx.setData({ duration: "year" });
       console.log(currentPlan);
     } else if (plan === false) {
       currentPlan.price = currentPlan.price / 10;
+      ctx.setData({ duration: "month" });
       console.log(currentPlan);
     }
   }, [plan]);
@@ -39,6 +43,8 @@ const PaymentForm = forwardRef((props, ref) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("YES");
+    ctx.setData({ planName: currentPlan.plan, planPrice: currentPlan.price });
+    ctx.setPage({ type: "inc" });
   };
   return (
     <form className={styles.form} onSubmit={handleSubmit}>
