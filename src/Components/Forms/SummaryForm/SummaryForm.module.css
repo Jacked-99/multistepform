@@ -78,7 +78,7 @@
 
 @media screen and (min-width: 950px) {
   .summary {
-    width: 35rem;
+    width: 25rem;
   }
   .addon {
     color: hsl(213, 96%, 18%);
