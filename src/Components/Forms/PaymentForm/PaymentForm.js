@@ -16,16 +16,20 @@ const PaymentForm = forwardRef((props, ref) => {
     pro: false,
   });
   useEffect(() => {
+    console.log(plan);
     if (plan === true) {
       currentPlan.price = currentPlan.price * 10;
       ctx.setData({ duration: "year" });
-      console.log(currentPlan);
     } else if (plan === false) {
-      currentPlan.price = currentPlan.price / 10;
+      if (currentPlan.price > 20) {
+        currentPlan.price = currentPlan.price / 10;
+      }
+
       ctx.setData({ duration: "month" });
-      console.log(currentPlan);
     }
-  }, [plan]);
+
+    console.log(currentPlan);
+  }, [plan, currentPlan]);
   const handleChange = (e) => {
     setPlan(e.target.checked);
   };
@@ -42,7 +46,6 @@ const PaymentForm = forwardRef((props, ref) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("YES");
     ctx.setData({ planName: currentPlan.plan, planPrice: currentPlan.price });
     ctx.setPage({ type: "inc" });
   };

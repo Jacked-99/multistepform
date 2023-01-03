@@ -25,13 +25,6 @@ const AddonForm = forwardRef((props, ref) => {
     ctx.setPage({ type: "inc" });
     ctx.setData({ addons: addons });
   };
-  let sum = () => {
-    let sum = 0;
-    for (let addon of addons) {
-      sum += addon.price;
-    }
-    return sum;
-  };
 
   const handleLift = (e) => {
     let mappedAddons = addons.map((addon) => {

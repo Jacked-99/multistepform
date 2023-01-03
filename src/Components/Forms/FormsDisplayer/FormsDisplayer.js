@@ -5,6 +5,7 @@ import FinalForm from "../FinalForm/FinalForm";
 import InfoForm from "../Info-Form/InfoForm";
 import PaymentForm from "../PaymentForm/PaymentForm";
 import SummaryForm from "../SummaryForm/SummaryForm";
+import styles from "./FormDisplayer.module.css";
 
 const FormDisplayer = forwardRef((props, ref) => {
   let ctx = useContext(FormContext);
@@ -24,7 +25,7 @@ const FormDisplayer = forwardRef((props, ref) => {
       return <FinalForm />;
     }
   };
-  return <>{Displayer()}</>;
+  return <div className={styles.Form}>{Displayer()}</div>;
 });
 
 export default FormDisplayer;

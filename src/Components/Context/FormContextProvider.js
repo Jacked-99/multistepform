@@ -15,7 +15,6 @@ const FormContextProvider = (props) => {
   const setDataHandler = (data) => {
     setCurrentData({ ...currentData, ...data });
   };
-  console.log(currentData);
   const defaultContext = {
     data: currentData,
     payment: {},

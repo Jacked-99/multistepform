@@ -30,7 +30,7 @@ const SummaryForm = forwardRef((props, ref) => {
   const addons = ctx.data.addons.map((addon) => {
     return (
       <div className={styles.addon} key={addon.name}>
-        <span>{addon.name}</span>
+        <span className={styles["addon_name"]}>{addon.name}</span>
         <span>{`+$${addon.price}/${
           ctx.data.duration === "month" ? "mo" : "yr"
         }`}</span>

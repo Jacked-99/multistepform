@@ -64,3 +64,15 @@
   margin-left: auto;
   color: hsl(243, 100%, 62%);
 }
+@media screen and (min-width: 950px) {
+  .plan {
+    width: 30rem;
+    padding: 1.5rem;
+  }
+  .desc {
+    font-size: 0.8rem;
+  }
+  .label {
+    font-size: 1rem;
+  }
+}

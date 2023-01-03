@@ -1,5 +1,5 @@
 import styles from "./AddonFormCard.module.css";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 const AddonFormCard = (props) => {
   const [checked, setChecked] = useState(false);
 
@@ -8,9 +8,7 @@ const AddonFormCard = (props) => {
 
     props.lift({ name: props.label, price: props.price, checked: !checked });
   };
-  // useEffect(() => {
 
-  // }, [checked]);
   return (
     <section className={`${styles.plan} ${checked ? styles.checked : ""}`}>
       <label className={styles.checkbox}>

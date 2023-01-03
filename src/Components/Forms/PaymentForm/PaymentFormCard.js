@@ -1,15 +1,14 @@
 import styles from "./PaymentFormCard.module.css";
-import { useState } from "react";
 
 const PaymentFormCard = (props) => {
   const select = props.state;
 
   const priceCheck = () => {
     let price = props.price;
-    if (!props.plan) {
+    if (props.plan === false) {
       return price;
     } else {
-      return price * 10;
+      return price;
     }
   };
   const handleClick = () => {
