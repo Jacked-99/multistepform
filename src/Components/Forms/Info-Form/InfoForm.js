@@ -69,7 +69,7 @@ const InfoForm = forwardRef((props, ref) => {
         Please provide your name, email address, and phone number
       </p>
       <div className={styles.head}>
-        <label className={styles.label} htmlFor="#name">
+        <label className={styles.label} htmlFor="name">
           Name
         </label>
         {nameVal.ohno === true ? (
@@ -88,7 +88,7 @@ const InfoForm = forwardRef((props, ref) => {
       ></input>
 
       <div className={styles.head}>
-        <label className={styles.label} htmlFor="#mail">
+        <label className={styles.label} htmlFor="mail">
           Email Address
         </label>
         {emailVal.ohno === true ? (
@@ -107,7 +107,7 @@ const InfoForm = forwardRef((props, ref) => {
       ></input>
 
       <div className={styles.head}>
-        <label className={styles.label} htmlFor="#number">
+        <label className={styles.label} htmlFor="number">
           Phone Number
         </label>
         {phoneVal.ohno === true ? (
